@@ -45,6 +45,7 @@
         months: "%d months",
         year: "about a year",
         years: "%d years",
+        separator: " ",
         numbers: []
       }
     },
@@ -84,7 +85,7 @@
         years < 2 && substitute($l.year, 1) ||
         substitute($l.years, Math.floor(years));
 
-      return $.trim([prefix, words, suffix].join(" "));
+      return $.trim([prefix, words, suffix].join(this.settings.separator));
     },
     parse: function(iso8601) {
       var s = $.trim(iso8601);
